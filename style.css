@@ -279,25 +279,29 @@ footer iframe {
     height: 40px;
   }
 }
-/* Course highlighting styles */
-.course-item.eligible-course {
-  position: relative;
-}
-
-.course-item.eligible-course .course-box {
-  border: 2px solid #4CAF50;
-  background-color: rgba(76, 175, 80, 0.05);
-}
-
-.course-item.eligible-course::after {
-  content: "Best for you!";
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #4CAF50;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
+/* Add this to your CSS */
+    .course-item.eligible-course .course-box {
+      background-color: #e7f1ff; /* Light blue background */
+      border: 2px solid #0d6efd; /* Bootstrap primary blue border */
+      position: relative;
+      transform: scale(1.02);
+      transition: all 0.3s ease;
+    }
+    
+    .course-item.eligible-course::after {
+      content: "Recommended for you";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background: #0d6efd;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      z-index: 1;
+    }
+    
+    .course-item.eligible-course .course-box h4 {
+      color: #0a58ca; /* Darker blue for heading */
+    }
