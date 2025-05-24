@@ -1,33 +1,31 @@
 // Add this to your script.js or in a script tag
 document.getElementById('studentForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const qualification = document.getElementById('studentQualification').value;
-  const courseList = document.getElementById('courseList');
-  const eligibleCourses = document.getElementById('eligibleCourses');
-  
-  // Clear previous results
-  courseList.innerHTML = '';
-  
-  // Define courses based on qualification
-  let courses = [];
-  if (qualification === '10th/12th') {
-    courses = [
-      { name: 'Certificate in Computer Applications (CCA)', duration: '3 Months' },
-      { name: 'Diploma in Computer Applications (DCA)', duration: '6 Months' },
-      { name: 'Diploma in IT & Automation (DIA)', duration: '6 Months' }
-    ];
-  } else if (qualification === 'graduate') {
-    courses = [
-      { name: 'Post Graduate Diploma in Computer Science and Applications (PGDCSA)', duration: '12 Months' },
-      { name: 'Advanced Diploma in Computer Applications (ADCA)', duration: '12 Months' }
-    ];
-  } else {
-    courses = [
-      { name: 'Certificate in Computer Applications (CCA)', duration: '3 Months' },
-      { name: 'Tally with GST', duration: '3 Months' }
-    ];
-  }
+      e.preventDefault();
+      const qualification = document.getElementById('studentQualification').value;
+      
+      // Reset all highlights first
+      document.querySelectorAll('.course-item').forEach(item => {
+        item.classList.remove('eligible-course');
+      });
+      
+      // Highlight matching courses
+      if (qualification) {
+        let eligibleCriteria = [];
+        if (qualification === '10th/12th') eligibleCriteria = ['10th Pass'];
+        else if (qualification === 'graduate') eligibleCriteria = ['Graduation', '12th Pass'];
+        else eligibleCriteria = ['10th Pass', '12th Pass', 'Others'];
+        
+        document.querySelectorAll('.course-item').forEach(item => {
+          const courseEligibility = item.getAttribute('data-eligibility');
+          if (eligibleCriteria.includes(courseEligibility)) {
+            item.classList.add('eligible-course');
+          }
+        });
+        
+        // Scroll to courses section
+        document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   
   // Display courses
   courses.forEach(course => {
