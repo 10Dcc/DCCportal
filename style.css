@@ -279,3 +279,25 @@ footer iframe {
     height: 40px;
   }
 }
+/* Course highlighting styles */
+.course-item.eligible-course {
+  position: relative;
+}
+
+.course-item.eligible-course .course-box {
+  border: 2px solid #4CAF50;
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.course-item.eligible-course::after {
+  content: "Best for you!";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #4CAF50;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
