@@ -169,47 +169,163 @@
     </div>
   </div>
 </section>
-   <!-- Replace the eligibility section with this -->
-<section id="eligibility" class="mb-5 p-4 p-md-5 bg-light rounded">
-  <h2 class="text-center mb-4">Find Your Right Course</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-10">
-      <div class="card shadow">
-        <div class="card-body">
-          <form id="studentForm">
-            <div class="row g-3">
-              <div class="col-md-4">
-                <label for="studentName" class="form-label">Your Name*</label>
-                <input type="text" class="form-control" id="studentName" required>
+   <!-- Updated Eligibility Section -->
+  <section id="eligibility" class="mb-5 p-4 p-md-5 bg-light rounded">
+    <h2 class="text-center mb-4">Find Your Right Course</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow">
+          <div class="card-body">
+            <form id="studentForm">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="studentName" class="form-label">Your Name*</label>
+                  <input type="text" class="form-control" id="studentName" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="studentPhone" class="form-label">Phone Number*</label>
+                  <input type="tel" class="form-control" id="studentPhone" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="studentQualification" class="form-label">Qualification*</label>
+                  <select class="form-select" id="studentQualification" required>
+                    <option value="">-- Select --</option>
+                    <option value="10th/12th">10th/12th Pass</option>
+                    <option value="graduate">Graduate</option>
+                    <option value="others">Others</option>
+                  </select>
+                </div>
               </div>
-              <div class="col-md-4">
-                <label for="studentPhone" class="form-label">Phone Number*</label>
-                <input type="tel" class="form-control" id="studentPhone" required>
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary px-4">Check Eligibility</button>
               </div>
-              <div class="col-md-4">
-                <label for="studentQualification" class="form-label">Qualification*</label>
-                <select class="form-select" id="studentQualification" required>
-                  <option value="">-- Select --</option>
-                  <option value="10th/12th">10th/12th Pass</option>
-                  <option value="graduate">Graduate</option>
-                  <option value="others">Others</option>
-                </select>
-              </div>
-            </div>
-            <div class="text-center mt-4">
-              <button type="submit" class="btn btn-primary px-4">Find Courses</button>
-            </div>
-          </form>
-          
-          <div id="eligibleCourses" class="mt-4 d-none">
-            <h5 class="text-center mb-3">Available Courses For You</h5>
-            <div class="row g-3" id="courseList"></div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Courses Section (Always Visible) -->
+  <section id="courses" class="mb-5">
+    <h2 class="text-center mb-4">Our Courses <small class="text-muted">(Highlighted ones match your qualification)</small></h2>
+    <div class="row g-4" id="allCourses">
+      <!-- CCA -->
+      <div class="col-md-6 col-lg-4 course-item" data-eligibility="10th Pass">
+        <div class="course-box h-100">
+          <div class="text-center mb-3">
+            <i class="fas fa-certificate fa-3x text-primary"></i>
+          </div>
+          <h4 class="text-center text-primary">CCA</h4>
+          <p class="text-center">Certificate in Computer Applications</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i> Duration: 3 Months</li>
+            <li><i class="fas fa-check text-success me-2"></i> Eligibility: 10th Pass</li>
+            <li><i class="fas fa-check text-success me-2"></i> Certification: Government Approved</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- DCA -->
+      <div class="col-md-6 col-lg-4 course-item" data-eligibility="10th Pass">
+        <div class="course-box h-100">
+          <div class="text-center mb-3">
+            <i class="fas fa-laptop-code fa-3x text-primary"></i>
+          </div>
+          <h4 class="text-center text-primary">DCA</h4>
+          <p class="text-center">Diploma in Computer Applications</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i> Duration: 6 Months</li>
+            <li><i class="fas fa-check text-success me-2"></i> Eligibility: 10th Pass</li>
+            <li><i class="fas fa-check text-success me-2"></i> Certification: Government Approved</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- ADCA -->
+      <div class="col-md-6 col-lg-4 course-item" data-eligibility="12th Pass">
+        <div class="course-box h-100">
+          <div class="text-center mb-3">
+            <i class="fas fa-desktop fa-3x text-primary"></i>
+          </div>
+          <h4 class="text-center text-primary">ADCA</h4>
+          <p class="text-center">Advanced Diploma in Computer Applications</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i> Duration: 12 Months</li>
+            <li><i class="fas fa-check text-success me-2"></i> Eligibility: 12th Pass</li>
+            <li><i class="fas fa-check text-success me-2"></i> Certification: Government Approved</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- PGDCSA -->
+      <div class="col-md-6 col-lg-4 course-item" data-eligibility="Graduation">
+        <div class="course-box h-100">
+          <div class="text-center mb-3">
+            <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+          </div>
+          <h4 class="text-center text-primary">PGDCSA</h4>
+          <p class="text-center">Post Graduate Diploma in Computer Science and Applications</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i> Duration: 12 Months</li>
+            <li><i class="fas fa-check text-success me-2"></i> Eligibility: Graduation</li>
+            <li><i class="fas fa-check text-success me-2"></i> Certification: Government Approved</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Tally with GST -->
+      <div class="col-md-6 col-lg-4 course-item" data-eligibility="12th Pass">
+        <div class="course-box h-100">
+          <div class="text-center mb-3">
+            <i class="fas fa-calculator fa-3x text-primary"></i>
+          </div>
+          <h4 class="text-center text-primary">Tally with GST</h4>
+          <p class="text-center">Certificate Course in Tally & GST</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i> Duration: 3 Months</li>
+            <li><i class="fas fa-check text-success me-2"></i> Eligibility: 12th Pass</li>
+            <li><i class="fas fa-check text-success me-2"></i> Certification: Government Approved</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- DIA -->
+      <div class="col-md-6 col-lg-4 course-item" data-eligibility="10th Pass">
+        <div class="course-box h-100">
+          <div class="text-center mb-3">
+            <i class="fas fa-robot fa-3x text-primary"></i>
+          </div>
+          <h4 class="text-center text-primary">DIA</h4>
+          <p class="text-center">Diploma in IT & Automation</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i> Duration: 6 Months</li>
+            <li><i class="fas fa-check text-success me-2"></i> Eligibility: 10th Pass</li>
+            <li><i class="fas fa-check text-success me-2"></i> Certification: Government Approved</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- DOA & FA -->
+      <div class="col-md-6 col-lg-4 course-item" data-eligibility="12th Pass">
+        <div class="course-box h-100">
+          <div class="text-center mb-3">
+            <i class="fas fa-file-invoice-dollar fa-3x text-primary"></i>
+          </div>
+          <h4 class="text-center text-primary">DOA & FA</h4>
+          <p class="text-center">Diploma in Office Automation & Financial Accounting</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i> Duration: 6 Months</li>
+            <li><i class="fas fa-check text-success me-2"></i> Eligibility: 12th Pass</li>
+            <li><i class="fas fa-check text-success me-2"></i> Certification: Government Approved</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rest of your existing content remains the same -->
+
    <!-- Replace the courses section with this -->
 <section id="courses" class="mb-5">
   <div class="row">
