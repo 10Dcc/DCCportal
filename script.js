@@ -1,49 +1,30 @@
-// Add this to your script.js or in a script tag
-document.getElementById('studentForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const qualification = document.getElementById('studentQualification').value;
-      
-      // Reset all highlights first
-      document.querySelectorAll('.course-item').forEach(item => {
-        item.classList.remove('eligible-course');
-      });
-      
-      // Highlight matching courses
-      if (qualification) {
-        let eligibleCriteria = [];
-        if (qualification === '10th/12th') eligibleCriteria = ['10th Pass'];
-        else if (qualification === 'graduate') eligibleCriteria = ['Graduation', '12th Pass'];
-        else eligibleCriteria = ['10th Pass', '12th Pass', 'Others'];
-        
-        document.querySelectorAll('.course-item').forEach(item => {
-          const courseEligibility = item.getAttribute('data-eligibility');
-          if (eligibleCriteria.includes(courseEligibility)) {
-            item.classList.add('eligible-course');
-          }
-        });
-        
-        // Scroll to courses section
-        document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+// Course Eligibility Function
+function showEligibleCourses() {
+  const qualification = document.getElementById('qualification');
+  const courseOptions = document.getElementById('courseOptions');
   
-  // Display courses
-  courses.forEach(course => {
-    const courseHtml = `
-      <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">${course.name}</h5>
-            <p class="card-text"><small>Duration: ${course.duration}</small></p>
-          </div>
-        </div>
+  if (!qualification || !courseOptions) return;
+  
+  const q = qualification.value;
+  let courses = '';
+  
+  if (q === "10th/12th") {
+    courses = `
+      <div class="alert alert-info">
+        <strong>Eligible Courses:</strong> CCA, DCA, ADCA, TALLY, DIA
+      </div>
+      <p class="text-muted">*Basic computer knowledge recommended</p>
+    `;
+  } else if (q === "graduate") {
+    courses = `
+      <div class="alert alert-success">
+        <strong>Eligible Courses:</strong> You are eligible for all courses
       </div>
     `;
-    courseList.insertAdjacentHTML('beforeend', courseHtml);
-  });
+  }
   
-  eligibleCourses.classList.remove('d-none');
-});
+  courseOptions.innerHTML = courses;
+}
 
 // Smooth Scrolling for Navigation
 document.addEventListener('DOMContentLoaded', function() {
