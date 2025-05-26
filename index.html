@@ -478,103 +478,86 @@
     </div>
   </div>
 </section>
-
-
+<!-- Updated Contact Section (just the form) -->
 <section id="contact" class="p-4 p-md-5 bg-white rounded shadow mb-5">
   <h2 class="text-center mb-4">Ready to start your journey with us</h2>
-  <div class="row">
-    <div class="col-lg-6 mb-0 mb-lg-0">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title"><i class="fas fa-map-marker-alt text-danger me-2"></i> Address</h5>
-          <p class="card-text">DCC Doodooma Extension Center<br>
-          Sonari Patti<br>
-          Doodooma, Assam - 786151</p>
-          
-          <h5 class="card-title mt-4"><i class="fas fa-phone-alt text-primary me-2"></i> Phone</h5>
-          <p class="card-text">+91 1234567890<br>+91 9876543210</p>
-          
-          <h5 class="card-title mt-4"><i class="fas fa-envelope text-info me-2"></i> Email</h5>
-          <p class="card-text">dccamtddm@gmail.com<br>admissions@dccdoodooma.edu.in</p>
-          
-          <h5 class="card-title mt-4"><i class="fas fa-clock text-warning me-2"></i> Working Hours</h5>
-          <p class="card-text">Monday - Saturday: 8:00 AM - 6:00 PM<br>
-          Sunday: Closed</p>
-        </div>
-      </div>
+  <form id="contactForm" class="row g-3 justify-content-center">
+    <div class="col-md-5">
+      <label for="name" class="form-label">Your Name*</label>
+      <input type="text" name="name" class="form-control" id="name" required>
     </div>
-    <div class="col-lg-6">
-      <form id="contactForm" class="row g-3">
-        <div class="col-md-10">
-          <label for="name" class="form-label">Your Name*</label>
-          <input type="text" name="name" class="form-control" id="name" required>
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">Email*</label>
-          <input type="email" name="email" class="form-control" id="email" required>
-        </div>
-        <div class="col-12">
-          <label for="phone" class="form-label">Phone Number</label>
-          <input type="tel" name="phone" class="form-control" id="phone">
-        </div>
-        <div class="col-12">
-          <label for="course" class="form-label">Interested Course</label>
-          <select name="course" id="course" class="form-select">
-            <option value="">Select a course</option>
-            <option value="DCA">DCA</option>
-            <option value="ADCA">ADCA</option>
-            <option value="PGDCA">PGDCA</option>
-            <option value="Tally">Tally with GST</option>
-            <option value="DIA">DIA</option>
-            <option value="DOA">DOA & FA</option>
-          </select>
-        </div>
-        <div class="col-12">
-          <label for="message" class="form-label">Message</label>
-          <textarea name="message" class="form-control" id="message" rows="4"></textarea>
-        </div>
-        <div class="col-12">
-          <div id="formResponse" class="mb-3"></div>
-          <button type="submit" class="btn btn-primary w-100">
-            <span id="submitText">Send Message</span>
-            <span id="submitSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-          </button>
-        </div>
-      </form>
+    <div class="col-md-5">
+      <label for="email" class="form-label">Email*</label>
+      <input type="email" name="email" class="form-control" id="email" required>
     </div>
-  </div>
-</section
+    <div class="col-md-5">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" name="phone" class="form-control" id="phone">
+    </div>
+    <div class="col-md-5">
+      <label for="course" class="form-label">Interested Course</label>
+      <select name="course" id="course" class="form-select">
+        <option value="">Select a course</option>
+        <option value="DCA">DCA</option>
+        <option value="ADCA">ADCA</option>
+        <option value="PGDCA">PGDCA</option>
+        <option value="Tally">Tally with GST</option>
+        <option value="DIA">DIA</option>
+        <option value="DOA">DOA & FA</option>
+      </select>
+    </div>
+    <div class="col-md-10">
+      <label for="message" class="form-label">Message</label>
+      <textarea name="message" class="form-control" id="message" rows="3"></textarea>
+    </div>
+    <div class="col-md-10">
+      <div id="formResponse" class="mb-3"></div>
+      <button type="submit" class="btn btn-primary w-100">
+        <span id="submitText">Send Message</span>
+        <span id="submitSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+      </button>
+    </div>
+  </form>
+</section>
+
+
+
   </main>
 
  <!-- In your footer section, replace the current footer with this: -->
+<!-- Updated Footer with Contact Information -->
 <footer class="bg-dark text-white pt-4 pb-2">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 mb-4 mb-md-0">
-        <h5>About DCC</h5>
-        <p>District Computer Centre is a Government of Assam recognized institute providing quality computer education since 2012.</p>
-        <div class="social-icons">
-          <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-      
-      <div class="col-md-4 mb-4 mb-md-0">
-        <h5>Quick Links</h5>
+      <div class="col-lg-4 mb-4">
+        <h5>Contact Information</h5>
         <ul class="list-unstyled">
-          <li><a href="#about" class="text-white">About Us</a></li>
-          <li><a href="#courses" class="text-white">Courses</a></li>
-          <li><a href="#faculty" class="text-white">Faculty</a></li>
-          <li><a href="#contact" class="text-white">Contact</a></li>
+          <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> DCC Doodooma Extension Center, Sonari Patti, Doodooma, Assam - 786151</li>
+          <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +91 1234567890, +91 9876543210</li>
+          <li class="mb-2"><i class="fas fa-envelope me-2"></i> dccamtddm@gmail.com</li>
+          <li><i class="fas fa-clock me-2"></i> Mon-Sat: 8:00 AM - 6:00 PM</li>
         </ul>
       </div>
       
-      <div class="col-md-4">
-        <!-- Small Map Section -->
-        <h5>Our Location</h5>
-        <div class="ratio ratio-1x1 mb-2">  <!-- Square aspect ratio -->
+      <div class="col-lg-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#about" class="text-white"><i class="fas fa-chevron-right me-1"></i> About Us</a></li>
+          <li class="mb-2"><a href="#courses" class="text-white"><i class="fas fa-chevron-right me-1"></i> Courses</a></li>
+          <li class="mb-2"><a href="#faculty" class="text-white"><i class="fas fa-chevron-right me-1"></i> Faculty</a></li>
+          <li><a href="#contact" class="text-white"><i class="fas fa-chevron-right me-1"></i> Contact Form</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-4">
+        <h5>Connect With Us</h5>
+        <div class="social-icons mb-3">
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+        </div>
+        <div class="ratio ratio-16x9">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.4181930106047!2d73.9153432751914!3d18.553555982549682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1bd4b41eeb3%3A0x69e6972f2c4f6375!2sComputer%20Training%20Institute!5e0!3m2!1sen!2sin!4v1716453676034!5m2!1sen!2sin" 
             style="border:0;" 
@@ -583,9 +566,6 @@
             aria-label="Location map">
           </iframe>
         </div>
-        <a href="https://maps.google.com/?q=DCC+Doodooma+Extension+Center" class="btn btn-sm btn-outline-light" target="_blank">
-          <i class="fas fa-directions me-1"></i> Get Directions
-        </a>
       </div>
     </div>
     
